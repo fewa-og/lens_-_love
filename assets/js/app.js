@@ -22,10 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Inject Navbar (Templating)
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    
+
     // Check Pseudo-Login Status
     const user = localStorage.getItem('loggedInUser');
-    const loginLink = user 
+    const loginLink = user
         ? `<span class="text-sm font-body text-amber-500">Hello, ${user}</span><button id="logout-btn" class="text-sm font-body hover:text-amber-500 ml-2 text-red-500 font-bold">Logout</button>`
         : `<a href="#" id="login-modal-open" class="text-sm font-body hover:text-amber-500 underline">Login</a>`;
 
@@ -99,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <a href="password-forgot.html" class="text-accent hover:underline">Forgot Password?</a>
                     </div>
                     <button type="submit" class="btn-primary w-full py-2">Login</button>
-                    <p class="text-xs text-center text-gray-500 mt-4">(Pseudo-Login: Any email works. Saves to localStorage)</p>
                 </form>
             </div>
         </div>
@@ -135,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    if(mobileBtn) {
+    if (mobileBtn) {
         mobileBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
@@ -155,24 +154,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    if(closeLogin) {
+    if (closeLogin) {
         closeLogin.addEventListener('click', () => {
             loginModal.classList.add('hidden');
         });
     }
 
     // Login Submit Pseudo
-    if(loginForm) {
+    if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const email = document.getElementById('login-email').value;
             const name = email.split('@')[0];
             localStorage.setItem('loggedInUser', name);
-            window.location.reload(); 
+            window.location.reload();
         });
     }
 
-    if(logoutBtn) {
+    if (logoutBtn) {
         logoutBtn.addEventListener('click', () => {
             localStorage.removeItem('loggedInUser');
             window.location.reload();

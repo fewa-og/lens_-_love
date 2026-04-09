@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Theme Configuration
     const storedTheme = localStorage.getItem('theme');
-    let isDark = true;
+    let isDark = false;
 
     if (storedTheme === 'light') {
         isDark = false;

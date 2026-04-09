@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Lens & Love</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+            <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              heading: ['"Playfair Display"', 'serif'],
+              body: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style> html { scroll-behavior: smooth; } body { -webkit-font-smoothing: antialiased; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-zinc-950 text-slate-900 dark:text-slate-100 font-body min-h-screen flex flex-col transition-colors duration-300">
+
+    <main class="flex-grow pt-10">
+        
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            
+            <div class="text-center mb-12">
+                <span class="text-purple-600 tracking-widest uppercase text-sm font-semibold">Our Portfolio</span>
+                <h1 class="font-heading text-5xl font-bold mt-4 mb-8">Selected Works</h1>
+                
+                <!-- Simple Filter Buttons -->
+                <div class="flex justify-center space-x-2 md:space-x-4 mb-4" id="gallery-filters">
+                    <button class="filter-btn active px-6 py-2 rounded-full border border-purple-600 bg-purple-600 text-white transition-colors" data-filter="all">All</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 dark:border-gray-700 bg-transparent text-slate-900 dark:text-gray-300 hover:border-purple-600 hover:text-purple-600 transition-colors" data-filter="weddings">Weddings</button>
+                    <button class="filter-btn px-6 py-2 rounded-full border border-gray-300 dark:border-gray-700 bg-transparent text-slate-900 dark:text-gray-300 hover:border-purple-600 hover:text-purple-600 transition-colors" data-filter="portraits">Couples</button>
+                </div>
+            </div>
+
+            <!-- Raster-Seite Layout (CSS Grid Requirement) -->
+            <!-- The actual grid items are injected by Javascript here -->
+            <div class="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6 grid-flow-dense py-8" id="gallery-container">
+                <!-- Javascript will render images here -->
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Custom Lightbox Modal -->
+    <div id="lightbox" class="hidden fixed inset-0 z-[110] bg-black/95 flex items-center justify-center backdrop-blur-md opacity-0 transition-opacity duration-300">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <img id="lightbox-img" src="" alt="Enlarged Photo" class="max-h-[85vh] max-w-[90vw] object-contain shadow-2xl rounded-sm">
+        <div id="lightbox-caption" class="absolute bottom-6 left-0 right-0 text-center text-white/90 font-heading text-2xl tracking-wide"></div>
+    </div>
+
+    <!-- App JS -->
+    <script src="assets/js/app.js"></script>
+    
+    <!-- Dynamic Content Generation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Image Database
+            const photos = [
+                { id: 1, url: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop", title: "Emma & James Wedding", category: "weddings", cssClass: "md:col-span-2 md:aspect-[2/1]" },
+                { id: 2, url: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&w=2000&auto=format&fit=crop", title: "Autumn Walk", category: "portraits", cssClass: "md:row-span-2 md:aspect-[1/2]" },
+                { id: 3, url: "https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=2070&auto=format&fit=crop", title: "The Details", category: "weddings", cssClass: "" },
+                { id: 4, url: "https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=2000&auto=format&fit=crop", title: "Zurich Lake Shoot", category: "portraits", cssClass: "" },
+                { id: 5, url: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop", title: "First Look", category: "weddings", cssClass: "md:col-span-2 md:aspect-[2/1]" },
+                { id: 6, url: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2000&auto=format&fit=crop", title: "Urban Couple", category: "portraits", cssClass: "md:row-span-2 md:aspect-[1/2]" },
+                { id: 7, url: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop", title: "Reception Joy", category: "weddings", cssClass: "" },
+                { id: 8, url: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1974&auto=format&fit=crop", title: "Mountain Engagement", category: "portraits", cssClass: "md:col-span-2 md:aspect-[2/1]" },
+                { id: 9, url: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=2000&auto=format&fit=crop", title: "Golden Hour", category: "portraits", cssClass: "" },
+                { id: 10, url: "https://images.unsplash.com/photo-1532712938730-4e36bd4c8e74?q=80&w=2000&auto=format&fit=crop", title: "Vows", category: "weddings", cssClass: "md:col-span-2 md:aspect-[2/1]" },
+                { id: 11, url: "https://images.unsplash.com/photo-1518144591331-17a5dd71c477?q=80&w=2000&auto=format&fit=crop", title: "City Lights", category: "portraits", cssClass: "md:row-span-2 md:aspect-[1/2]" },
+                { id: 12, url: "https://images.unsplash.com/photo-1509927083803-4bd519298ac4?q=80&w=2000&auto=format&fit=crop", title: "First Dance", category: "weddings", cssClass: "" }
+            ];
+
+            const container = document.getElementById('gallery-container');
+            
+            // Render Gallery Function
+            const renderGallery = (filter = 'all') => {
+                container.innerHTML = '';
+                
+                const filtered = filter === 'all' ? photos : photos.filter(p => p.category === filter);
+                
+                filtered.forEach(photo => {
+                    const itemHTML = `
+                        <div class="relative overflow-hidden rounded-lg cursor-pointer shadow-md bg-zinc-900 aspect-square group ${photo.cssClass}" data-src="${photo.url}" data-title="${photo.title}">
+                            <img src="${photo.url}" alt="${photo.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-zinc-950/70 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white z-10">
+                                <h3 class="font-heading text-xl mb-1">${photo.title}</h3>
+                                <span class="text-xs uppercase tracking-wider text-amber-500">${photo.category}</span>
+                            </div>
+                        </div>
+                    `;
+                    container.insertAdjacentHTML('beforeend', itemHTML);
+                });
+
+                // Attach Lightbox event listeners to new elements
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    item.addEventListener('click', () => openLightbox(item.dataset.src, item.dataset.title));
+                });
+            };
+
+            // Initial Render
+            renderGallery('all');
+
+            // Filtering Logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-purple-600', 'text-white', 'border-purple-600');
+                        b.classList.add('bg-transparent', 'text-slate-900', 'dark:text-gray-300', 'border-gray-300', 'dark:border-gray-700');
+                    });
+                    
+                    const clicked = e.target;
+                    clicked.classList.remove('bg-transparent', 'text-slate-900', 'dark:text-gray-300', 'border-gray-300', 'dark:border-gray-700');
+                    clicked.classList.add('bg-purple-600', 'text-white', 'border-purple-600');
+                    
+                    renderGallery(clicked.dataset.filter);
+                });
+            });
+
+            // Lightbox Logic
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const closeBtn = document.getElementById('lightbox-close');
+
+            const openLightbox = (src, title) => {
+                lightboxImg.src = src;
+                lightboxCaption.textContent = title;
+                lightbox.classList.remove('hidden');
+                setTimeout(() => lightbox.classList.remove('opacity-0'), 10);
+            };
+
+            const closeLightbox = () => {
+                lightbox.classList.add('opacity-0');
+                setTimeout(() => lightbox.classList.add('hidden'), 300);
+            };
+
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeLightbox();
+            });
+        });
+    </script>
+</body>
+</html>

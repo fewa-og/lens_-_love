@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Lens & Love</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+            <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              heading: ['"Playfair Display"', 'serif'],
+              body: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style> html { scroll-behavior: smooth; } body { -webkit-font-smoothing: antialiased; } </style>
+</head>
+<body class="bg-slate-50 dark:bg-zinc-950 text-slate-900 dark:text-slate-100 font-body min-h-screen flex flex-col transition-colors duration-300">
+
+    <main class="flex-grow pt-10">
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            
+            <div class="text-center mb-16">
+                <span class="text-purple-600 tracking-widest uppercase text-sm font-semibold">The Faces Behind The Lens</span>
+                <h1 class="font-heading text-5xl font-bold mt-4 mb-6">About Leo & Lena</h1>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-16 items-start">
+                
+                <!-- About Description (Lauftext) -->
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-heading font-semibold mb-6 text-purple-800 dark:text-purple-600">A Partnership Built on Coffee & Cameras</h2>
+                    
+                    <div class="space-y-5 text-lg font-light opacity-90 leading-relaxed text-justify mb-8">
+                        <p>We met five years ago in a small café in Zurich. Between sipping cappuccinos and discussing the merits of analog vs. digital, we realized we shared a singular obsession: collecting fleeting moments.</p>
+                        <p>What started as weekend nature walks with our trusty old cameras quickly blossomed into "Lens & Love". We don't just take pictures; we aim to capture the feeling of the day. The way the light hit your dress, the tear your father wiped away, the wild energy on the dancefloor.</p>
+                        <p>We believe the best photos happen when you forget we're even there.</p>
+                    </div>
+
+                    <!-- HTML Lists Requirement -->
+                    <div class="bg-white dark:bg-zinc-900 p-8 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm mb-12">
+                        <h3 class="font-heading text-2xl font-semibold mb-6 text-amber-500">What to expect from us:</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-3 mt-1"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></span>
+                                <div>
+                                    <strong class="block font-medium dark:text-white">Documentary Style</strong>
+                                    <span class="text-sm opacity-80 font-light">We capture events as they unfold naturally.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-3 mt-1"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></span>
+                                <div>
+                                    <strong class="block font-medium dark:text-white">Pre-Wedding Consultation</strong>
+                                    <span class="text-sm opacity-80 font-light">Coffee dates to align our vision with yours.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-purple-600 mr-3 mt-1"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></span>
+                                <div>
+                                    <strong class="block font-medium dark:text-white">Fast Delivery</strong>
+                                    <span class="text-sm opacity-80 font-light">Teasers within 48h, full gallery in 4 weeks.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Images & Stats -->
+                <div class="lg:w-1/2 flex flex-col gap-8 w-full">
+                    <div class="relative z-10">
+                        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-amber-500 opacity-20 rounded-full blur-2xl -z-10 w-32 h-32 bg-purple-600/30 blur-3xl rounded-full absolute -top-10 -right-10"></div>
+                        <img src="https://images.unsplash.com/photo-1516575334481-f85287c2c82d?q=80&w=2127&auto=format&fit=crop" alt="Leo and Lena Photography" class="w-full rounded-2xl shadow-xl border-4 border-white dark:border-zinc-900 object-cover h-[500px]">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Contact Form Section -->
+        <section class="bg-gray-50 dark:bg-zinc-900 py-20 mt-10 transition-colors">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="bg-white dark:bg-zinc-900 rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row border border-gray-100 dark:border-gray-800">
+                    
+                    <div class="md:w-5/12 bg-purple-600 dark:bg-purple-800 text-white p-10 flex flex-col justify-center">
+                        <h3 class="font-heading text-3xl font-bold mb-4">Let's Connect</h3>
+                        <p class="opacity-90 font-light mb-8">We would love to hear about your special day. Fill out the form, and we'll get back to you within 24 hours.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <span class="font-light">hello@lensandlove.com</span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <span class="font-light">Zurich, Switzerland</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-7/12 p-10">
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2 opacity-80">First Name</label>
+                                    <input type="text" required class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-zinc-950 focus:ring-2 focus:ring-purple-600 focus:outline-none transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2 opacity-80">Last Name</label>
+                                    <input type="text" required class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-zinc-950 focus:ring-2 focus:ring-purple-600 focus:outline-none transition-colors">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium mb-2 opacity-80">Email Address</label>
+                                <input type="email" required class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-zinc-950 focus:ring-2 focus:ring-purple-600 focus:outline-none transition-colors">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium mb-2 opacity-80">Inquiry Type</label>
+                                <select class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-zinc-950 focus:ring-2 focus:ring-purple-600 focus:outline-none transition-colors">
+                                    <option>Wedding Photography</option>
+                                    <option>Couples Portrait</option>
+                                    <option>Other Event</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium mb-2 opacity-80">Your Message</label>
+                                <textarea rows="4" required class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-zinc-950 focus:ring-2 focus:ring-purple-600 focus:outline-none transition-colors"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-purple-600 hover:bg-purple-800 text-white font-medium py-3 rounded-md transition-colors shadow-md hover:shadow-lg">Send Inquiry</button>
+                            <p id="form-success" class="text-green-500 text-sm hidden mt-2 text-center">Your message has been saved in LocalStorage!</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="assets/js/app.js"></script>
+    <script>
+        // Simple JS logic for the form to save to localstorage (Requirement)
+        document.getElementById('contact-form')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const successMsg = document.getElementById('form-success');
+            localStorage.setItem('lastInquiry', new Date().toISOString());
+            successMsg.classList.remove('hidden');
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+                e.target.reset();
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

@@ -1,14 +1,14 @@
 # ProjektFemi - Lens & Love Photography
 
 ## 1. Projektbeschreibung
-Das Projekt umfasst eine Webseite für ein fiktives Fotografen-Paar ("Lens & Love"), das sich auf Hochzeiten und Porträts spezialisiert hat. Die Seite bietet potenziellen Kunden die Möglichkeit, das Paar kennenzulernen und ihr Portfolio in einer responsiven Raster-Galerie zu betrachten. Zur besseren Wartbarkeit wird Vanilla JavaScript eingesetzt, um wiederkehrende Layout-Elemente dynamisch zu laden.
+Das Projekt umfasst eine Webseite für ein fiktives Fotografen-Paar ("Lens & Love"), das sich auf Hochzeiten und Porträts spezialisiert hat. Die Seite bietet potenziellen Kunden die Möglichkeit, das Paar kennenzulernen und ihr Portfolio in einer responsiven Raster-Galerie zu betrachten. Javascript wird verwendet, um die Webseite dynamischer zu gestalten.
 
 ## 2. Wireframes
 See `wireframe.drawio` for the Graphical XML interface.
 
 ## 3. Styleguide
 
-- **Logo:** Stylischer Textzug "Lens & Love" in eleganter Serif-Schrift.
+- **Logo:** ![alt text](Logo.png)
 - **Farbschema:** 
   - Hintergrund Dunkel (Standard): `#0F0A19` (Tiefes Schwarz-Violett)
   - Hintergrund Hell (Toggle): `#F8F7FA` (Zartes Creme-Weiss)

@@ -3,15 +3,15 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        darkBg: '#0F0A19',
-        lightBg: '#F8F7FA',
-        primary: '#8B5CF6',
-        primaryDark: '#6D28D9',
-        accent: '#F59E0B',
-        textDark: '#1E293B',
-        textLight: '#E2E8F0',
-        cardDark: '#1E1B2E',
-        cardLight: '#FFFFFF'
+        darkBg: 'var(--dark-bg)',
+        lightBg: 'var(--light-bg)',
+        primary: 'var(--primary)',
+        primaryDark: 'var(--primary-dark)',
+        accent: 'var(--accent)',
+        textDark: 'var(--text-dark)',
+        textLight: 'var(--text-light)',
+        cardDark: 'var(--card-dark)',
+        cardLight: 'var(--card-light)'
       },
       fontFamily: {
         heading: ['"Playfair Display"', 'serif'],

@@ -1,0 +1,11 @@
+{
+  "name": "lens-and-love-optimizer",
+  "version": "1.0.0",
+  "description": "Task Runner for Web Application Optimization",
+  "scripts": {
+    "build:css": "node \"node_modules/sass/sass.js\" assets/css/styles.scss assets/css/styles.css"
+  },
+  "devDependencies": {
+    "sass": "^1.72.0"
+  }
+}

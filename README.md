@@ -19,5 +19,5 @@ See `wireframe.drawio` for the Graphical XML interface.
   - Überschriften: `Playfair Display` (Elegant, Serif)
   - Fließtext: `Inter` (Klar, Sans-Serif)
 - **Layout-Abstände:**
-  - Standard-Padding (Sektionen): `4rem` (Y-Achse), `2rem` (X-Achse)
-  - Gap (Grid/Flex): `1.5rem` (ca. 24px)
+  - Standard-Padding (Sektionen): `4rem` (py-16) (Y-Achse), `2rem` (px-8) (X-Achse)
+  - Gap (Grid/Flex): `1.5rem` (ca. 24px, gap-6 tailwind)

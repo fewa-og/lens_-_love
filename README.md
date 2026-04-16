@@ -21,3 +21,6 @@ See `wireframe.drawio` for the Graphical XML interface.
 - **Layout-Abstände:**
   - Standard-Padding (Sektionen): `4rem` (py-16) (Y-Achse), `2rem` (px-8) (X-Achse)
   - Gap (Grid/Flex): `1.5rem` (ca. 24px, gap-6 tailwind)
+
+## 4. Link zur Seite
+- https://fewa-og.github.io/lens_-_love/index.html
